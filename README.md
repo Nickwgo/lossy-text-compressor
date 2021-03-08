@@ -18,5 +18,5 @@ Please note that the program will overwrite the output file, if it already
 exists, without warning.
 
 
-Copyright © 2021 Nicholas Godfrey
+Copyright © 2021 Nicholas Godfrey\
 Email: nickg_8128@outlook.com
