@@ -5,4 +5,4 @@ CC=gcc
 # then you're on your own.
 
 lts: main.c
-	$(CC) main.c -olts -Os
+	$(CC) main.c -oltc -Os
