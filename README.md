@@ -1,4 +1,5 @@
-# lossy-text-compressor
+# Lossy Text Compressor
+
 As we all know, there are times when we just don't need all of the details - a
 vague outline is all that's required. Furthermore, as anyone who has
 experimented with methods of lossless compression will know, lossless
