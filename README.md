@@ -1,6 +1,6 @@
 # lossy-text-compressor
-As we all know, there are times when we just don't need all of details - a
-vague outline is all that's needed. Furthermore, as anyone who has
+As we all know, there are times when we just don't need all of the details - a
+vague outline is all that's required. Furthermore, as anyone who has
 experimented with methods of lossless compression will know, lossless
 compression has its limits. If you are in such a situation, this is the
 software for you - a lossy text compressor. As with all lossy compression,
