@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,11 +23,33 @@ int main(int argc, char *argv[]) {
 	} 
 
 	FILE *input = fopen(argv[1], "r");
+	if (!input) {
+		perror("input_file");
+		exit(EXIT_FAILURE);
+	}
 	FILE *output = fopen(argv[2], "w");
+	if (!output) {
+		perror("output_file");
+		exit(EXIT_FAILURE);
+	}
 	char ibuf[BUFSIZ];
 	char obuf[BUFSIZ];
-	setvbuf(input, ibuf, _IOFBF, BUFSIZ);
-	setvbuf(output, obuf, _IOFBF, BUFSIZ);
+	if (setvbuf(input, ibuf, _IOFBF, BUFSIZ)) {
+		if (errno)
+			perror("setvbuf (input)");
+		else
+			fprintf(stderr, "setvbuf (input):"
+					" There was an error\n");
+		exit(EXIT_FAILURE);
+	}
+	if (setvbuf(output, obuf, _IOFBF, BUFSIZ)) {
+		if (errno)
+			perror("setvbuf (output)");
+		else
+			fprintf(stderr, "setvbuf (output):"
+					" There was an error\n");
+		exit(EXIT_FAILURE);
+	}
 	
 	char minibuf[8];
 	size_t tmp;
