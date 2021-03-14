@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
 		exit(EXIT_FAILURE);
 	}
 	
-	char minibuf[8];
+	unsigned char minibuf[8];
 	size_t tmp;
 	for (;;) {
 		tmp = fread(minibuf, 1, 8, input);
@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
 			exit(EXIT_SUCCESS);
 		}
 		for (int i = 0; i < 7; i++) {
+			minibuf[i] &= 0xff<<(i+1);
 			minibuf[i] |= minibuf[i+1]>>(7-i);
 			minibuf[i+1] = minibuf[i+1]<<(i+1);
 		}
