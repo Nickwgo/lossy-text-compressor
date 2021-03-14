@@ -1,4 +1,6 @@
-CC = cc
+# CC = x86_64-w64-mingw32-gcc -std=c17
+CC = cc -std=c17
+
 ltc : main.o compress.o decompress.o help.o
 	${CC} -oltc -Os main.o compress.o decompress.o help.o
 
@@ -14,4 +16,4 @@ help.o : ./src/help.c ./src/help.h
 # There must be an easier way of doing that
 
 clean :
-	rm ltc main.o compress.o decompress.o help.o
+	rm ltc* main.o compress.o decompress.o help.o

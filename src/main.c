@@ -29,7 +29,7 @@ enum instructions {
 static int do_function(enum instructions *, int, FILE *, FILE *);
 static int fmov(FILE *, FILE *); /* copies the contents of one file to
 				    another. */
-static void rmtmp(void); /* removes the temporary file */
+static void rmtemp(void); /* removes the temporary file */
 
 static char *output_file;
 static char *input_file;
@@ -243,7 +243,7 @@ label_3:
 		perror("fopen (tmpfile)");
 		exit(EXIT_FAILURE);
 	}
-	if (atexit(rmtmp)) { /* from now on, the temporary file will be
+	if (atexit(rmtemp)) { /* from now on, the temporary file will be
 				automatically deleted if the program should
 				terminate */
 		fprintf(stderr, "atexit: An error occurred\n");
@@ -349,7 +349,7 @@ static int fmov(FILE *ifile, FILE *ofile) {
 	exit(EXIT_FAILURE); /* THIS SHOULD NEVER BE RUN */
 }
 
-static void rmtmp(void) {
+static void rmtemp(void) {
 	if (tmp_file && remove(tmp_file)) {
 		perror("remove (tmpfile)");
 	}
