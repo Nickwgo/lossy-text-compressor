@@ -7,7 +7,7 @@ compression has its limits. If you are in such a situation, this is the
 software for you - a lossy text compressor. As with all lossy compression,
 this allows the user to cut out the largely unnecessary details, in order to
 achieve a smaller filesize. This revolutionary algorithm has been shown to
-consistently reduce the sizes of files by upwards of 14%, by removing the
+consistently reduce the sizes of files by upwards of 12%, by removing the
 least significant bit of every byte. Whilst this software was originally
 designed for use on plaintext, it can technically be used on any file format,
 including raw binary, just as effectively.
