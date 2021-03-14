@@ -12,11 +12,36 @@ least significant bit of every byte. Whilst this software was originally
 designed for use on plaintext, it can technically be used on any file format,
 including raw binary, just as effectively.
 
-Usage:	ltc <input_file> <output_file>
+# Usage
 
-Please note that the program will overwrite the output file, if it already
-exists, without warning.
+Usage: ltc [options] file
 
+Options:
+	-c
+	--compress
+		Compress the input file.
+	-d
+	--decompress
+		Decompress the input file.
+	-h
+	--help
+		Display this help dialogue.
+	-i
+	--input
+		Set the input file.
+
+Short options (one '-') that take no arguments may be proceeded
+immediately (without a space) by another short option. For example:
+
+	ltc -cdi ifile ofile
+
+compresses then decompresses 'ifile', outputting the result to
+'ofile'.
+
+The output file should be specified on its own, that is, without an
+accompanying option (as above).
+
+# Other
 
 Copyright © 2021 Nicholas Godfrey\
 Email: nickg_8128@outlook.com

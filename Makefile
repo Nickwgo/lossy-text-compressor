@@ -1,8 +1,17 @@
-CC=gcc
+CC = cc
+ltc : main.o compress.o decompress.o help.o
+	${CC} -oltc -Os main.o compress.o decompress.o help.o
 
-# I don't know how makefiles work for other operating systems.
-# If you are not using a Unix-like system that supports the 'make' command,
-# then you're on your own.
+main.o : ./src/main.c ./src/compress.h ./src/decompress.h ./src/help.h
+	${CC} -c -Os ./src/main.c
+compress.o : ./src/compress.c ./src/compress.h
+	${CC} -c -Os ./src/compress.c
+decompress.o : ./src/decompress.c ./src/decompress.h
+	${CC} -c -Os ./src/decompress.c
+help.o : ./src/help.c ./src/help.h
+	${CC} -c -Os ./src/help.c
 
-lts: main.c
-	$(CC) main.c -oltc -Os
+# There must be an easier way of doing that
+
+clean :
+	rm ltc main.o compress.o decompress.o help.o
