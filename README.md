@@ -16,19 +16,19 @@ including raw binary, just as effectively.
 
 Usage: ltc [options] file
 
-Options:\
-	-c\
-	--compress\
-		Compress the input file.\
-	-d\
-	--decompress\
-		Decompress the input file.\
-	-h\
-	--help\
-		Display this help dialogue.\
-	-i\
-	--input\
-		Set the input file.
+Options:
+  -c
+  --compress
+    Compress the input file.
+  -d
+  --decompress
+    Decompress the input file.
+  -h
+  --help
+    Display this help dialogue.
+  -i
+  --input
+    Set the input file.
 
 Short options (one '-') that take no arguments may be proceeded immediately
 (without a space) by another short option. For example:
