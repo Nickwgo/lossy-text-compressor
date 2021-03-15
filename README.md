@@ -34,9 +34,9 @@ Options:
 Short options (one '-') that take no arguments may be proceeded immediately
 (without a space) by another short option. For example:
 
-    ltc -cdi ifile ofile
+    ltc -ccdi ifile ofile
 
-compresses then decompresses 'ifile', outputting the result to 'ofile'.
+compresses twice then decompresses 'ifile', outputting the result to 'ofile'.
 
 The output file should be specified on its own, that is, without an
 accompanying option (as above).
